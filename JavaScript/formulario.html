@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+/*function validateForm() {
+    var x = document.forms["formulario"]["nombre"].value;
+    if (x == "") {
+        alert("No has rellenado el formulario");
+        return false;
+    }
+}*/
+
+$(document).ready(function(){
+    $("#boton").click(function(){
+        var error=0;
+        if($("#nombre").val().trim().length < 3  || $("#nombre").val().trim().length > 10){
+            error++;
+            $("#nombre").css("background-color","red");
+        }
+        if($("#apellidos").val().trim().length < 3  || $("#apellidos").val().trim().length > 10){
+            error++;
+            $("#apellidos").css("background-color","red");
+        }
+
+        if($("#edad").val() < 18  || $("#edad").val() > 80){
+            error++;
+            $("#edad").css("background-color","red");
+        }
+
+        if(error==0){
+            alert("Todo correcto");
+        } else {
+            alert("No es correcto");
+        }
+    });
+});
+
+</script>
+</head>
+<body>
+
+Nombre: <input type="text" name="nombre" id="nombre">
+<p/>
+Apellidos: <input type="text" name="apellidos" id="apellidos">
+<p/>
+Edad: <input type="text" name="edad" id="edad">
+
+<p> Provincia:  
+    <select id="opciones" name="opciones">
+      <option value="1">Valencia</option>
+      <option value="2">Granada</option>
+      <option value="3">Jaen</option>
+      <option value="4">Cordoba</option>
+    </select>
+</p>
+
+<p> Email: 
+    <input type="text" name="email" id="email"/>
+<p/>
+
+<input type="button" id="boton" value="Boton" />
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+    var imagenes=Array("ima/images1.jpg","ima/images2.jpg","ima/images3.jpg");
+    var num=1;
+    
+        $(document).ready(function(){
+            $("#b1").click(function(){
+                $("p").toggle(1000);
+               
+            });
+        });
+
+        function cambiar(){
+            num++;
+            if(num>3){
+                num=1;
+            }
+            var foto = document.getElementById("im1");
+            foto.src="ima/images" + num + ".jpg";
+            
+        }
+
+
+</script>
+</head>
+<body>
+
+<input id="b1" name="button1" type="button" value="Aparece o Desaparece" />
+<input id="b3" name="button2" type="button" onclick='cambiar()' value="Cambiar imagen" />
+
+<p>
+    <img id="im1" src="ima/images1.jpg" />
+</p>
+
+</body>
+</html>

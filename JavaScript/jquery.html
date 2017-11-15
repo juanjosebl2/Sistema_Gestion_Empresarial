@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+        alert("No me toques el texto!");
+    });
+});
+
+$(document).ready(function(){
+    $("h2").dblclick(function(){
+        $(this).hide();
+        alert("No me toques el titulo!");
+    });
+});
+
+$(document).ready(function(){
+    $("h3").mouseenter(function(){
+        alert("Me has señalado -.-");
+        $(this).hide();
+    });
+});
+
+</script>
+</head>
+<body>
+
+<h2>Titulo</h2>
+<h3>h3</h3>
+<p>Textoos</p>
+
+</body>
+</html>
